@@ -1,7 +1,7 @@
 package config
 
 import (
-	"errors"
+	"fmt"
 
 	"gorm.io/gorm"
 )
@@ -12,8 +12,19 @@ var (
 )
 
 func Init() error {
-    return errors.New("fake error")
-    // return nil
+	var err error
+
+    // Initialize SQLite
+    db, err = InitializeSQlite()
+    if err != nil {
+        return fmt.Errorf("error initializing SQLite: %v", err)
+    }
+
+    return nil
+}
+
+func GetSQLite() *gorm.DB {
+    return db
 }
 
 func GetLogger(p string) *Logger {
