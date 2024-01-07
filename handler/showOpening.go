@@ -10,7 +10,7 @@ import (
 // @BasePath /api/v1
 
 // @Summary Show opening
-// @Description Show a new job opening
+// @Description Show a job opening
 // @Tags Openings
 // @Accept json
 // @Produce json
